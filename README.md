@@ -4,6 +4,18 @@ This document serves as a guide for using the test framework created for the Tru
 
 The framework uses [Cucumber][cucumber] with [Selenium][selenium] to enable automated web testing.
 
+## Requirements
+
+1. [Java8][java]
+2. [Maven][maven]
+
+###### For local running
+1. Driver executable [Chrome][chrome] or [Firefox][firefox]
+2. Browser with version to match driver.
+
+###### For remote running
+3. [Docker][docker]
+
 ## Getting started
 
 1. Clone this project `git clone https://github.com/FreddieCarre/cucumber-selenium.git`
@@ -97,3 +109,5 @@ To run the tests, once you have the containers running, you can pass the argumen
 [docker]: https://www.docker.com/
 [chrome]: https://chromedriver.chromium.org/downloads
 [firefox]: https://www.seleniumhq.org/download/
+[maven]: https://maven.apache.org/download.cgi
+[java]: https://www.java.com/en/download/
