@@ -2,9 +2,9 @@ package com.google.glue;
 
 import com.google.pages.ResultsPage;
 import com.google.pages.SearchPage;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class GoogleStepDefs {

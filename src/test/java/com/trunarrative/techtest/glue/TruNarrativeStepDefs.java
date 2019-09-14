@@ -2,9 +2,9 @@ package com.trunarrative.techtest.glue;
 
 import com.trunarrative.techtest.pages.Homepage;
 import com.trunarrative.techtest.pages.LeadershipPage;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class TruNarrativeStepDefs {
