@@ -9,8 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SearchPage extends BasePage {
 
-    private final String URL = "http://www.google.com";
-
     @FindBy(css = "input[title='Search']")
     private WebElement searchInput;
 
@@ -19,7 +17,7 @@ public class SearchPage extends BasePage {
 
     public SearchPage() {
         super();
-        driver.get(URL);
+        driver.get(System.getProperty("googleUrl"));
     }
 
     public static SearchPage open() {

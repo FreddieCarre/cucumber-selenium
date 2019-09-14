@@ -12,5 +12,4 @@ import io.cucumber.junit.Cucumber;
         },
         features = {"src/test/resources/features"}
 )
-public class TestRunner {
-}
+public class TestRunner { }

@@ -16,8 +16,8 @@ public class TruNarrativeStepDefs {
     public void iAmOnTheTruNarrativeHomepage() {
 
         homepage = Homepage.isOpen();
-        Assert.assertEquals(homepage.getTitle(), "TruNarrative | Who, What and When | Fraud and Compliance Risk Solution");
-        Assert.assertTrue(homepage.straplineIsDisplayed());
+        Assert.assertEquals(homepage.getTitle(), System.getProperty("homeTitle"));
+        Assert.assertEquals(homepage.straplineIsDisplayed(), System.getProperty("straplineText"));
     }
 
     @When("^I click \"([^\"]*)\" from the \"([^\"]*)\" menu$")

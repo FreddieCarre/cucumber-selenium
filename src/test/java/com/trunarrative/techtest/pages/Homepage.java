@@ -22,9 +22,8 @@ public class Homepage extends BasePage {
         return PageFactory.initElements(driver, Homepage.class);
     }
 
-    public Boolean straplineIsDisplayed() {
-        return strapline.getText()
-                .equals("Easy Onboarding.  Smooth Transactions.  Insightful Compliance.");
+    public String straplineIsDisplayed() {
+        return strapline.getText();
     }
 
     public void clickMenu(String menu) {

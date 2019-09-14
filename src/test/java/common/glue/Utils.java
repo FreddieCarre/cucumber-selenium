@@ -1,5 +1,6 @@
 package common.glue;
 
+import common.Config;
 import common.DriverFactory;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
@@ -16,6 +17,7 @@ public class Utils {
 
     @Before
     public static void setup() {
+        Config.initProperties();
         DriverFactory.getDriver()
                 .manage().window().maximize();
     }
