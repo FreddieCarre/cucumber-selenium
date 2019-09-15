@@ -19,6 +19,8 @@ The framework uses [Cucumber][cucumber] with [Selenium][selenium] to enable auto
 ## Getting started
 
 1. Clone this project `git clone https://github.com/FreddieCarre/cucumber-selenium.git`
+2. (Optional) Start Selenium grid `docker-compose up`
+3. (In a new terminal) Run test `mvn clean verify`
 
 ## Project Layout
 
@@ -80,7 +82,8 @@ An overview of some of the important packages.
 
 Tests can be executed on your own system, or using the provided docker-compose file to run via the containerised selenium grid.
 
-You can run from the command line using mvn clean test, or by using your IDE run configuration (Junit pointing to TestRunner class).
+You can run from the command line using `mvn clean verify`, or by using your IDE run configuration 
+(Junit option pointing to runner/TestRunner class).
 
 ### Execution Options
 
