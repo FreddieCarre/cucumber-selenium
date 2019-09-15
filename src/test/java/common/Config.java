@@ -4,16 +4,16 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
 import java.util.Properties;
 
 public class Config {
 
     public static void initProperties() {
-        final URL configPath = Config.class.getResource("/configs/testConfig.properties");
+        final String configPath = Config.class
+                .getResource("/configs/testConfig.properties").getPath();
         BufferedReader reader;
         try {
-            reader = new BufferedReader(new FileReader(configPath.getPath()));
+            reader = new BufferedReader(new FileReader(configPath));
             Properties properties = System.getProperties();
             try {
                 properties.load(reader);
@@ -24,7 +24,7 @@ public class Config {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            throw new RuntimeException("testConfig.properties not found at " + configPath);
+            throw new RuntimeException("testConfig.properties not found: " + configPath);
         }
     }
 }
