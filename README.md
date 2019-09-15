@@ -47,7 +47,7 @@ The layout looks something like this
 |        |   |
 |        |   ├── common/
 |        |   |    ├─ glue/
-|        |   |    |  └── Utils.java
+|        |   |    |  └── TestPrep.java
 |        |   |    ├─ BasePage.java
 |        |   |    ├─ Config.java
 |        |   |    └─ DriverFactory.java
@@ -70,7 +70,7 @@ An overview of some of the important packages.
 | glue  | Contain step definition classes |
 | pages  | Contain page object classes |
 | features  | Contain your feature files |
-| Utils.java | Contains test setup and teardown functions |
+| TestPrep.java | Contains test setup and teardown functions |
 | BasePage.java | Common page interactions |
 | Config.java | Used to write config files to System.properties |
 | DriverFactory.java | WebDriver management |

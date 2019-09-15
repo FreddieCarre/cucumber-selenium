@@ -27,8 +27,8 @@ public class SearchPage extends BasePage {
     }
 
     public ResultsPage searchFor(String searchText) {
-        findAndType(searchInput, searchText)
-                .submit();
+        findAndType(searchInput, searchText);
+        waitAndClick(searchButton);
 
         return PageFactory.initElements(driver, ResultsPage.class);
     }

@@ -16,10 +16,11 @@ public class ResultsPage extends BasePage {
     }
 
     public void clickResult(int number) {
-        results.get(number - 1).click();
+        waitAndClick(results.get(number - 1));
     }
 
     public String getResultHref(int index) {
-        return results.get(index).getAttribute("href");
+        return waitForVisibility(results.get(index))
+                .getAttribute("href");
     }
 }

@@ -27,14 +27,17 @@ public class Homepage extends BasePage {
     }
 
     public void clickMenu(String menu) {
-        String menuXpath = String.format("//a[text() = '%s']", menu);
+        String menuXpath = String.format("//a[text() = '%s']/parent::li", menu);
         WebElement menuItem = driver.findElement(By.xpath(menuXpath));
-        waitAndClick(menuItem);
+        WebElement subMenuItems = hover(menuItem)
+                .findElement(By.xpath("//li/a"));
+        waitForVisibility(subMenuItems);
     }
 
     public <T> T clickOption(String option, Class<T> targetPageClass) {
         String optionXpath = String.format("//a[text() = '%s']", option);
-        driver.findElement(By.xpath(optionXpath)).click();
+        WebElement optionEle = driver.findElement(By.xpath(optionXpath));
+        waitAndClick(optionEle);
 
         return PageFactory.initElements(driver, targetPageClass);
     }

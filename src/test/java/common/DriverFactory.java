@@ -5,8 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -25,7 +23,7 @@ public class DriverFactory {
         return driver;
     }
 
-    static void setDriver() {
+    private static void setDriver() {
 
         boolean local;
         local = (System.getProperty("remote") == null);
@@ -85,13 +83,14 @@ public class DriverFactory {
     }
 
     private static ChromeDriver createChromeDriver() {
-        return new ChromeDriver();
+        ChromeOptions options = new ChromeOptions()
+                .addArguments("start-maximized");
+
+        return new ChromeDriver(options);
     }
 
     private static FirefoxDriver createFirefoxDriver() {
-        FirefoxOptions options = new FirefoxOptions()
-                .setProfile(new FirefoxProfile());
-        return new FirefoxDriver(options);
+        return new FirefoxDriver();
     }
 
     private enum Browsers {
