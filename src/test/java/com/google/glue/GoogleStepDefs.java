@@ -20,7 +20,8 @@ public class GoogleStepDefs {
     @When("^I search for \"([^\"]*)\"$")
     public void searchFor(String searchText) {
         resultsPage = searchPage.searchFor(searchText);
-        Assert.assertEquals(resultsPage.getResultHref(0), System.getProperty("truNarrativeUrl"));
+        Assert.assertEquals(resultsPage.getResultHref(0),
+                System.getProperty(searchText + "Url"));
     }
 
     @And("^I click result number (\\d+)$")

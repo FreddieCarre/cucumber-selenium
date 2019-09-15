@@ -12,14 +12,15 @@ import org.openqa.selenium.TakesScreenshot;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
-public class Utils {
+public class TestPrep {
 
     @Before
     public static void setup() {
         Config.initProperties();
-        DriverFactory.getDriver()
-                .manage().window().maximize();
+        DriverFactory.getDriver().manage()
+                .timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @After

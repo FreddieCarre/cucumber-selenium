@@ -14,7 +14,6 @@ public class TruNarrativeStepDefs {
 
     @Given("^I am on the TruNarrative homepage$")
     public void iAmOnTheTruNarrativeHomepage() {
-
         homepage = Homepage.isOpen();
         Assert.assertEquals(homepage.getTitle(), System.getProperty("homeTitle"));
         Assert.assertEquals(homepage.straplineIsDisplayed(), System.getProperty("straplineText"));
