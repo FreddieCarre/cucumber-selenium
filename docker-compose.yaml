@@ -23,3 +23,6 @@ services:
     environment:
     - HUB_HOST=selenium-hub
     - HUB_PORT=4444
+    - SCREEN_HEIGHT=1080
+    - SCREEN_WIDTH=1920
+    - SCREEN_DEPTH=24

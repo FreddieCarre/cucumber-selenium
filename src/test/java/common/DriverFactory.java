@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -16,9 +17,7 @@ public class DriverFactory {
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
-        if (driver == null) {
-            setDriver();
-        }
+        if (driver == null) setDriver();
 
         return driver;
     }
@@ -45,16 +44,25 @@ public class DriverFactory {
                 capabilities = DesiredCapabilities.chrome();
                 capabilities.setBrowserName("chrome");
                 capabilities.setPlatform(Platform.LINUX);
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--window-size=1920,1080");
+                capabilities.setCapability(ChromeOptions.CAPABILITY, options);
                 break;
             case FIREFOX:
                 capabilities = DesiredCapabilities.firefox();
                 capabilities.setBrowserName("firefox");
                 capabilities.setPlatform(Platform.LINUX);
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                firefoxOptions.addArguments("--window-size=1920,1080");
+                capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);
                 break;
             default:
                 capabilities = DesiredCapabilities.chrome();
                 capabilities.setBrowserName("chrome");
                 capabilities.setPlatform(Platform.LINUX);
+                options = new ChromeOptions();
+                options.addArguments("--start-maximized");
+                capabilities.setCapability(ChromeOptions.CAPABILITY, options);
                 break;
         }
         try {
